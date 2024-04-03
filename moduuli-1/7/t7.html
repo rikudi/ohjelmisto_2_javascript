@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Tehtävä 7
+        document.addEventListener('DOMContentLoaded', function () {
+            const dices = prompt('Give me the number of dices');
+            const pElement = document.querySelector('p');
+
+            const rollDice = () => {
+                const dice = Number(dices);
+                let sum = 0;
+                // loopataan niin monta kertaa kuin käyttäjä antaa noppien määrän
+                for (let i = 0; i < dice; i++) {
+                    // arvotaan luku 1-6 ja lisätään +1, koska Math.random antaa luvun 0-1
+                    const roll = Math.floor(Math.random() * 6) + 1;
+                    sum += roll;
+                    pElement.textContent += `Dice ${i + 1}: ${roll}\n`;
+                }
+                pElement.textContent += `Sum: ${sum}`;
+            };
+            rollDice();
+        });
+    </script>
+    <p></p>
+</body>
+</html>

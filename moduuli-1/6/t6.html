@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Tehtävä 6
+        document.addEventListener('DOMContentLoaded', function () {
+            const confirm = window.confirm('Calculate square root?');
+            const pElement = document.querySelector('p');
+
+            const calculateSquareRoot = () => {
+                if (confirm) {
+                    const number = prompt('Give me a number');
+                    if(number < 0) {
+                        pElement.textContent = 'You cannot calculate the square root of a negative number';
+                        return;
+                    }
+                    const squareRoot = Math.sqrt(number);
+                    pElement.textContent = 'The square root of ' + number + ' is ' + squareRoot;
+                } else {
+                    pElement.textContent = 'You did not want to calculate the square root';
+                }
+            };
+            calculateSquareRoot();
+        });
+    </script>
+    <p></p>
+</body>
+</html>
