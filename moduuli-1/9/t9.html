@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Tehtävä 9
+        document.addEventListener('DOMContentLoaded', function () {
+            const input = prompt('Give me a number');
+            const pElement = document.querySelector('p');
+
+            const isPrimeNumber = () => {
+                const number = Number(input);
+                let isPrime = true;
+                // Alkuluvun on oltava suurempi kuin 1
+                if (number === 1) {
+                    isPrime = false;
+                    // Jos luku on suurempi kuin 1, tarkistetaan onko se jaollinen jollain muulla luvulla kuin 1 ja itsellään
+                } else if (number > 1) {
+                    for (let i = 2; i < number; i++) {
+                        // Jos luku on jaollinen jollain muulla luvulla kuin 1 ja itsellään, se ei ole alkuluku
+                        if (number % i === 0) {
+                            isPrime = false;
+                            break;
+                        }
+                    }
+                }
+
+                pElement.textContent = isPrime ? number + ' is a prime number' : number + ' is not a prime number';
+            };
+            isPrimeNumber();
+        });
+    </script>
+    <p></p>
+</body>
+</html>

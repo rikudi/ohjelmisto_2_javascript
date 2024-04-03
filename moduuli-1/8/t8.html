@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Tehtävä 8
+        document.addEventListener('DOMContentLoaded', function () {
+            const startYear = prompt('Give me a start year');
+            const endYear = prompt('Give me an end year');
+            const htmlList = document.querySelector('ul');
+
+            const checkForLeapYear = () => {
+                const start = Number(startYear);
+                const end = Number(endYear);
+                let leapYears = [];
+
+                for (let i = start; i <= end; i++) {
+                    let isLeapYear = false;
+                    // Jos vuosi on jaollinen 4:llä, se on karkausvuosi
+                    if (i % 4 === 0) {
+                        isLeapYear = true;
+                        // Jos vuosi on jaollinen 100:lla ja 400:lla, se on karkausvuosi
+                        if (i % 100 === 0) {
+                            if (i % 400 === 0) {
+                                isLeapYear = true;
+                            } else {
+                                isLeapYear = false;
+                            }
+                        }
+                    }
+                    // jos on karkausvuosi niin lisätään se listaan
+                    if (isLeapYear) {
+                        leapYears.push(i);
+                    }
+                }
+                // jos ei ole karkausvuosia niin tulostetaan "No leap years", muuten mapataan lista li-elementeiksi
+               htmlList.innerHTML = leapYears.length === 0 ? '<li>No leap years</li>' : leapYears.map(year => `<li>${year}</li>`).join('');
+            };
+            checkForLeapYear();
+        });
+    </script>
+    <ul></ul>
+</body>
+</html>
