@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Tehtävä 4 Hogwarts sorter
+        document.addEventListener('DOMContentLoaded', function () {
+            const name = prompt('Enter your name:');
+            const pElement = document.querySelector('p');
+            const houses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
+            // Luodaan getHouse funktio, joka arpoo talon
+            const getHouse = () => {
+                // Arvotaan luokka käyttäen Math.random() funktiota
+                const randomHouse = houses[Math.floor(Math.random() * houses.length)];
+                pElement.textContent = name + ', you are ' + randomHouse;
+            }
+            getHouse();
+        });
+    </script>
+    <p></p>
+</body>
+
+</html>

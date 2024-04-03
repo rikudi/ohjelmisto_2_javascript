@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Tehtävä 3
+        document.addEventListener('DOMContentLoaded', function () {
+            // Kysytään kolme lukua käyttäjältä, käyttäen prompt
+            const inputOne = prompt('Give number 1');
+            const inputTwo = prompt('Give number 2');
+            const inputThree = prompt('Give number 3');
+            const pElement = document.querySelector('p');
+
+            // Funktio joka laskee summan, keskiarvon ja tulon kolmesta syötetystä luvusta
+            const calcValues = () => {
+                const num1 = Number(inputOne);
+                const num2 = Number(inputTwo);
+                const num3 = Number(inputThree);
+
+                const sum = num1 + num2 + num3;
+                const average = sum / 3;
+                const product = num1 * num2 * num3;
+                pElement.textContent = 'Sum: ' + sum + ', Average: ' + average + ', Product: ' + product;
+            };
+            calcValues();
+        });
+    </script>
+    <p></p>
+</body>
+
+</html>
