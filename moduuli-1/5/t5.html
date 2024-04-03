@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Tehtävä 5
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearPrompt = prompt('Give me a year');
+            const pElement = document.querySelector('p');
+
+            const checkForLeapYear = () => {
+                const year = Number(yearPrompt);
+                let isLeapYear = false;
+                // Jos vuosi on jaollinen 4:llä, se on karkausvuosi
+                if (year % 4 === 0) {
+                    isLeapYear = true;
+                    // Jos vuosi on jaollinen 100:lla, se ei ole karkausvuosi
+                    if (year % 100 === 0) {
+                        // Jos vuosi on jaollinen 100:lla ja 400:lla, se on karkausvuosi
+                        if (year % 400 === 0) {
+                            isLeapYear = true;
+                        }else {
+                            isLeapYear = false;
+                        }
+                    }
+                }
+
+                pElement.textContent = isLeapYear ? year + ' is a leap year' : year + ' is not a leap year';
+            };
+            checkForLeapYear();
+        });
+    </script>
+    <p></p>
+</body>
+</html>
