@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Tehtävä 2
+        document.addEventListener('DOMContentLoaded', function () {
+            const number = prompt('Give me the number of participants');
+            const orderList = document.querySelector('ol');
+            const participants = [];
+
+            for (let i = 0; i < number; i++) {
+                const name = prompt(`Give me the name of participant ${i + 1}`);
+                participants.push(name);
+            }
+
+            participants.sort()
+
+            const printParticipants = () => {
+                for (let i = 0; i < participants.length; i++) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent += participants[i];
+                    orderList.appendChild(listItem);
+                }
+            };
+
+            printParticipants();
+        });
+    </script>
+    <ol></ol>
+</body>
+</html>

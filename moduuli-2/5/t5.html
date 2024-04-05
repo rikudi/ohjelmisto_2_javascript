@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let numbers = [];
+            // loopataan niin kauan kunnes käyttäjä syöttää jo syötetyn numeron
+            for (let i = 1; i > 0; i++) {
+                const number = prompt('Give me a number');
+                if (numbers.includes(number)) {
+                    alert("Number already exists, closing program...")
+                    break;
+                }
+                else {
+                    numbers.push(number);
+                }
+            }
+            // console logaa numerot pienimmästä suurimpaan
+            console.log(numbers.sort((a, b) => a - b));
+        });
+    </script>
+</body>
+
+</html>

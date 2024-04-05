@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let numbers = [];
+            const numbersUntilZero = () => {
+                for (let i = 1; i > 0; i++) {
+                    const number = prompt('Give me a number');
+                    numbers.push(number);
+                    if (number == 0) {
+                        break;
+                    }
+                }
+                // console logaa numerot suurimmasta pienimpään
+                console.log(numbers.sort((a, b) => b - a));
+            }
+            numbersUntilZero();
+        });
+    </script>
+</body>
+</html>

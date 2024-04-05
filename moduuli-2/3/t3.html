@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const unorderedList = document.querySelector('ul');
+            let dogs = []
+
+            // Kysytään käyttäjältä koirien nimet ja lisätään ne dogs taulukkoon
+            for (let i = 0; i <= 5; i++) {
+                const dog = prompt('Give me the name of dog ' + (i + 1));
+                dogs.push(dog);
+            }
+
+            // tulostetaan koirat käänteisessä aakkosjärjestyksessä li-elementteinä
+            const printDogs = () => {
+                dogs.sort().reverse();
+                for (let i = 0; i < dogs.length; i++) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent += dogs[i];
+                    unorderedList.appendChild(listItem);
+                }
+            };
+            printDogs();
+        });
+    </script>
+    <ul></ul>
+</body>
+
+</html>

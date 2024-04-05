@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Tehtävä 10
+        'use strict'
+        document.addEventListener('DOMContentLoaded', function () {
+            const candidateCount = prompt('Give me the number of candidates');
+            let candidates = []
+
+            for(let candidate = 0; candidate < candidateCount; candidate++){
+                // annetaan ehdokkaalle nimi ja äänet alustetaan nollaksi
+                const name = prompt(`Give me the name of candidate ${candidate + 1}`);
+                const votes = 0;
+                // lisätään ehdokas taulukkoon objektina
+                candidates.push({name: name, votes: votes});
+            }
+            console.log(candidates)
+
+            // funktio ehdokkaan äänestämiseen
+            const voteForCandidate = (name) => {
+                // valitaan ehdokas
+                const candidate = prompt(`${name}, give me the name of the candidate you want to vote for`);
+                // etsitään ehdokas taulukosta
+                const candidateIndex = candidates.findIndex(c => c.name === candidate);
+                // jos ehdokas löytyy, lisätään ääni
+                if(candidateIndex !== -1){
+                    candidates[candidateIndex].votes++;
+                } else {
+                    console.log('Candidate not found');
+                }
+            }
+
+            // käydään kaikki listan ehdokkaat läpi ja äänestetään ehdokasta
+            for(let candidate in candidates){
+                voteForCandidate(candidates[candidate].name);
+            }
+
+            // tulostetaan ehdokkaat ja heidän äänensä suuruusjärjestyksessä
+            const printCandidates = () => {
+                candidates.sort((a, b) => b.votes - a.votes);
+                for(let candidate in candidates){
+                    console.log(`${candidates[candidate].name}: ${candidates[candidate].votes} votes`);
+                }
+            }
+            printCandidates();
+        });
+    </script>
+</body>
+</html>

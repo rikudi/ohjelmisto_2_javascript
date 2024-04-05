@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p></p>
+    <script>
+        'use strict'
+        const lista = ['moi', 'morjes', 'terve', 'morjesta']
+        const pElement = document.querySelector('p')
+        // funktio joka tulostaa merkkijonon listan alkioista
+        const concat = (arr) => {
+            let str = '';
+            // loopataan lista läpi ja lisätään jokainen alkio str muuttujaan
+            for (let i = 0; i < arr.length; i++) {
+                str += arr[i];
+            }
+            pElement.textContent = str;
+        }
+        concat(lista)
+    </script>
+</body>
+
+</html>

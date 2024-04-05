@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const ul = document.querySelector('ul');
+            // nopan heittäminen
+            const rollDice = () => {
+                return Math.floor(Math.random() * 6) + 1;
+            };
+
+            let result = 0
+            // heitetään noppaa kunnes saadaan silmäluku 6
+            for (let i = 1; i > 0; i++) {                
+                result = rollDice();
+                ul.innerHTML += `<li>${result}</li>`;
+                if (result == 6) {
+                    break;
+                }
+            }
+        });
+    </script>
+    <ul></ul>
+</body>
+
+</html>
