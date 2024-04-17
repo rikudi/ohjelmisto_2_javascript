@@ -11,11 +11,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const unorderedList = document.querySelector('ul');
-            let dogs = []
+            const dogs = []
 
             // Kysytään käyttäjältä koirien nimet ja lisätään ne dogs taulukkoon
             for (let i = 0; i <= 5; i++) {
-                const dog = prompt('Give me the name of dog ' + (i + 1));
+                var dog = prompt('Give me the name of dog ' + (i + 1));
                 dogs.push(dog);
             }
 

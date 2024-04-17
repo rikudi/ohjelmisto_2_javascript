@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <ul></ul>
+    <script>
+        'use script'
+
+        const listahaloo = document.querySelector('ul');
+        const koirat = []
+
+        for (let i = 0; i < 6; i++) {
+            var nimi = prompt("Anna koiran nimi");
+            koirat.push(nimi);
+        }
+
+
+        koirat.sort().reverse();
+        for (let i = 0; i < koirat.length; i++) {
+            const lista = document.createElement("li");
+            lista.textContent += koirat[i];
+            listahaloo.appendChild(lista);
+        }
+
+        console.log(koirat);
+    </script>
+
+</body>
+
+</html>
