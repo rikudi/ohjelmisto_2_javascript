@@ -16,10 +16,12 @@ const students = [
 
 const targetElement = document.getElementById('target');
 
+
 for (const student of students) {
   const element = document.createElement('option');
   //add value to option element and use it to store the student id
   element.value = student.id;
+  students[i].id
   //add text to option element
   element.textContent = student.name;
   //append option element to select element
